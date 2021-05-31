@@ -27,7 +27,7 @@ namespace MVCDemo.Models
 
         [DisplayName("Your Age")]
         [Required]
-        [Range(10, 100)]
+        [Range(18, 100, ErrorMessage = "Age must be 18 or older")]
         public int Age { get; set; }
 
         public DateTime BirthDate { get; set; }

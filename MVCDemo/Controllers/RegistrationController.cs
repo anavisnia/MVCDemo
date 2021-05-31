@@ -14,7 +14,7 @@ namespace MVCDemo.Controllers
 
         public RegistrationController()
         {
-           this.ageCalculationService = new AgeCalculationService();
+            this.ageCalculationService = new AgeCalculationService();
         }
 
         public IActionResult Index()
@@ -23,9 +23,10 @@ namespace MVCDemo.Controllers
             return View(model);
         }
 
+        [HttpPost]
         public IActionResult Post(RegistrationModel model)
         {
-            if(!ModelState.IsValid || model.Age < 18)
+            if(!ModelState.IsValid)
             {
                 return View("Index", model);
             }
