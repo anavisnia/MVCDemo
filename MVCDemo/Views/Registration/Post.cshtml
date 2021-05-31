@@ -1,0 +1,24 @@
+﻿@model RegistrationModel
+
+    <h3>The registration was successfull! Thanks @Model.Name</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Age</th>
+                <th scope="col">Year of birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Name</td>
+                <td>@Model.Surname</td>
+                <td>@Model.Email</td>
+                <td>@Model.Age</td>
+                <td>@Model.BirthDate.ToShortDateString()</td>
+            </tr>
+        </tbody>
+    </table>
