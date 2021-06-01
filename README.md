@@ -1,4 +1,4 @@
-# # Week 2. Lesson 4 hw.
+# Week 2. Lesson 4 hw.
 ## Console Application WebScraper
 #### Create ASP.NET Registration form:
 1. It should register for Name, Surname, Age and Address.
