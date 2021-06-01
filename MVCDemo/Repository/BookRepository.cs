@@ -42,6 +42,5 @@ namespace MVCDemo.Repository
         {
             return _booksRepository;
         }
-
     }
 }

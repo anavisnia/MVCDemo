@@ -37,7 +37,5 @@ namespace MVCDemo.Controllers
 
             return RedirectToAction("Index");
         }
-
-
     }
 }

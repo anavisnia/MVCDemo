@@ -7,10 +7,16 @@ namespace MVCDemo.Services
 {
     public class AgeCalculationService
     {
+        private readonly DateTimeService _dateTimeService;
+
+        public AgeCalculationService(DateTimeService dateTimeService)
+        {
+            _dateTimeService = dateTimeService;
+        }
 
         public DateTime CalculateBirthDateFromAge(int age)
         {
-            var currentDate = DateTime.Now;
+            var currentDate = _dateTimeService.GetCurrentDate();
 
             return currentDate.AddYears(age * (-1));
         }

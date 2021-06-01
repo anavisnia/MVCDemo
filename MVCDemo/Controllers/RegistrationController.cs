@@ -10,12 +10,18 @@ namespace MVCDemo.Controllers
 {
     public class RegistrationController : Controller
     {
-        private readonly AgeCalculationService ageCalculationService;
+        private readonly AgeCalculationService _ageCalculationService;
 
-        public RegistrationController()
+        // dependency injection
+        public RegistrationController(AgeCalculationService ageCalculationService)
         {
-            this.ageCalculationService = new AgeCalculationService();
+            _ageCalculationService = ageCalculationService ?? throw new ArgumentNullException(nameof(ageCalculationService));
         }
+
+        //public RegistrationController()
+        //{
+        //    _ageCalculationService = new AgeCalculationService();
+        //}
 
         public IActionResult Index()
         {
@@ -31,7 +37,7 @@ namespace MVCDemo.Controllers
                 return View("Index", model);
             }
 
-            model.BirthDate = this.ageCalculationService.CalculateBirthDateFromAge(model.Age);
+            model.BirthDate = _ageCalculationService.CalculateBirthDateFromAge(model.Age);
 
             return View(model);
         }
